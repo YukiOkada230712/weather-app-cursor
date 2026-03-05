@@ -16,3 +16,9 @@ globs: ["src/app/components/**/*.tsx", "src/components/**/*.tsx"]
 - CityButton → atoms/
 - CitySelector（ボタン群）→ molecules/
 - CurrentWeather（全体）→ organisms/
+
+## テスト
+新規コンポーネントを作成するときは、コンポーネント本体と**必ずセットで**テストファイルを作成すること。
+- テストファイルの配置：`src/__tests__/[ComponentName].test.tsx`
+- テストフレームワーク：Vitest
+- 最低限カバーすること：正常系レンダリング・APIエラー時の表示・主要なユーザー操作
