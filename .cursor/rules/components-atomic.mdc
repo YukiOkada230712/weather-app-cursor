@@ -1,0 +1,18 @@
+---
+type: auto_attached
+globs: ["src/app/components/**/*.tsx", "src/components/**/*.tsx"]
+---
+
+# コンポーネント設計ルール（自動適用）
+
+このファイルはコンポーネントファイルを開いたときに自動で読み込まれます。
+
+## Atomic Design パターン
+- atoms/：ボタン・入力欄など単一要素（props のみで制御、状態を持たない）
+- molecules/：複数の atoms を組み合わせたもの（軽い状態管理あり）
+- organisms/：ページを構成する大きな単位（API 呼び出し可）
+
+## 今回のコンポーネント対応表
+- CityButton → atoms/
+- CitySelector（ボタン群）→ molecules/
+- CurrentWeather（全体）→ organisms/
