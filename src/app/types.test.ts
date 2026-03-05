@@ -2,8 +2,15 @@ import { describe, it, expect } from 'vitest'
 import { CITIES, type City, type WeatherData } from './types'
 
 describe('CITIES', () => {
-  it('5つの都市が定義されていること', () => {
-    expect(CITIES).toHaveLength(5)
+  it('6つの都市が定義されていること', () => {
+    expect(CITIES).toHaveLength(6)
+  })
+
+  it('京都が含まれていること', () => {
+    const kyoto = CITIES.find((c) => c.name === '京都')
+    expect(kyoto).toBeDefined()
+    expect(kyoto?.latitude).toBeCloseTo(35.0116, 3)
+    expect(kyoto?.longitude).toBeCloseTo(135.7681, 3)
   })
 
   it('すべての都市が name, latitude, longitude を持つこと', () => {
